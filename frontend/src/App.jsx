@@ -171,7 +171,10 @@ const ChatPage = () => {
    ========================================================= */
 const ProtectedRoute = ({ children }) => {
   const { authToken } = useChat();
-  if (!authToken) return <Navigate to="/login" replace />;
+  const searchParams = new URLSearchParams(window.location.search);
+  const isGuest = searchParams.get("guest") === "true";
+  
+  if (!authToken && !isGuest) return <Navigate to="/login" replace />;
   return children;
 };
 
@@ -183,7 +186,11 @@ function App() {
   const navigate = useNavigate();
 
   const handleGetStarted = useCallback(() => {
-    navigate(authToken ? "/chat" : "/login");
+    if (authToken) {
+      navigate("/chat");
+    } else {
+      navigate("/chat?guest=true");
+    }
   }, [authToken, navigate]);
 
   return (

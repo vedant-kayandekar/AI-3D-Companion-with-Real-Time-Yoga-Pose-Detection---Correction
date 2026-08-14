@@ -12,23 +12,28 @@ import { Avatar as Avatar3 } from "./Avatar3";
 import { Avatar_yoga } from "./Avatar_yoga";
 
 const Dots = (props) => {
-  const { loading } = useChat();
+  const { loading, isRAGMode } = useChat();
   const [loadingText, setLoadingText] = useState("");
   useEffect(() => {
     if (loading) {
-      const interval = setInterval(() => {
-        setLoadingText((loadingText) => {
-          if (loadingText.length > 2) {
-            return ".";
-          }
-          return loadingText + ".";
-        });
-      }, 800);
-      return () => clearInterval(interval);
+      if (isRAGMode) {
+        setLoadingText("🧠 Searching Knowledge Base...");
+      } else {
+        const interval = setInterval(() => {
+          setLoadingText((loadingText) => {
+            if (loadingText.length > 2) {
+              return ".";
+            }
+            return loadingText + ".";
+          });
+        }, 800);
+        return () => clearInterval(interval);
+      }
     } else {
       setLoadingText("");
     }
-  }, [loading]);
+  }, [loading, isRAGMode]);
+  
   if (!loading) return null;
   return (
     <group {...props}>
@@ -69,8 +74,8 @@ export const Experience = () => {
       <Suspense>
         <Dots position-y={1.75} position-x={-0.02} />
       </Suspense>
-      {role === "Yoga" && <Avatar />}
-      {role === "YogAi" && <Avatar_yoga />}
+      {/* Map Yoga role directly to the preferred new_yoga_assistant.glb model */}
+      {role === "Yoga" && <Avatar_yoga />}
       {role === "Kickboxing" && <Avatar2 yogaPose={message?.yogaPose} />}
       {role === "Friend" && <Avatar3 />}
       <ContactShadows opacity={0.7} />

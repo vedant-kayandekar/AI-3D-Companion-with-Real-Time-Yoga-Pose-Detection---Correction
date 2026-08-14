@@ -415,7 +415,7 @@ app.post("/chat", async (req, res) => {
     if (isGuest && guestId) {
         const session = guestSessions.get(guestId);
         if (!session) return res.status(401).json({ error: "Invalid guest session" });
-        if (session.messageCount >= 5) {
+        if (session.messageCount >= 3) {
             return res.status(403).json({ 
                 error: "Guest limit reached. Please log in to continue.",
                 requireLogin: true
