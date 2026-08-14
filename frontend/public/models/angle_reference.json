@@ -1,0 +1,1379 @@
+{
+  "angle_reference": {
+    "Anantasana_Step1": {
+      "left_knee_angle": {
+        "mean": 160.11,
+        "std": 33.54,
+        "min": 3.23,
+        "max": 179.96
+      },
+      "right_knee_angle": {
+        "mean": 161.78,
+        "std": 27.33,
+        "min": 4.15,
+        "max": 179.91
+      },
+      "left_elbow_angle": {
+        "mean": 140.84,
+        "std": 35.91,
+        "min": 3.2,
+        "max": 179.89
+      },
+      "right_elbow_angle": {
+        "mean": 147.3,
+        "std": 33.76,
+        "min": 18.79,
+        "max": 179.69
+      },
+      "hip_alignment": {
+        "mean": 45.62,
+        "std": 29.84,
+        "min": 0.27,
+        "max": 89.81
+      },
+      "spine_tilt": {
+        "mean": 53.39,
+        "std": 28.2,
+        "min": 0.43,
+        "max": 89.94
+      },
+      "shoulder_alignment": {
+        "mean": 42.48,
+        "std": 28.53,
+        "min": 0.01,
+        "max": 89.9
+      }
+    },
+    "Anantasana_Step2": {
+      "left_knee_angle": {
+        "mean": 115.99,
+        "std": 48.8,
+        "min": 2.05,
+        "max": 179.79
+      },
+      "right_knee_angle": {
+        "mean": 123.05,
+        "std": 60.21,
+        "min": 2.84,
+        "max": 179.9
+      },
+      "left_elbow_angle": {
+        "mean": 91.06,
+        "std": 59.23,
+        "min": 0.35,
+        "max": 179.05
+      },
+      "right_elbow_angle": {
+        "mean": 75.88,
+        "std": 57.09,
+        "min": 0.58,
+        "max": 176.6
+      },
+      "hip_alignment": {
+        "mean": 30.86,
+        "std": 24.53,
+        "min": 0.62,
+        "max": 87.25
+      },
+      "spine_tilt": {
+        "mean": 60.53,
+        "std": 26.25,
+        "min": 0.78,
+        "max": 89.65
+      },
+      "shoulder_alignment": {
+        "mean": 29.52,
+        "std": 22.39,
+        "min": 0.05,
+        "max": 86.82
+      }
+    },
+    "Anantasana_Step3": {
+      "left_knee_angle": {
+        "mean": 129.25,
+        "std": 57.47,
+        "min": 2.93,
+        "max": 179.87
+      },
+      "right_knee_angle": {
+        "mean": 96.78,
+        "std": 56.44,
+        "min": 1.43,
+        "max": 179.74
+      },
+      "left_elbow_angle": {
+        "mean": 67.75,
+        "std": 58.05,
+        "min": 0.4,
+        "max": 174.78
+      },
+      "right_elbow_angle": {
+        "mean": 95.99,
+        "std": 58.94,
+        "min": 0.67,
+        "max": 179.79
+      },
+      "hip_alignment": {
+        "mean": 38.76,
+        "std": 25.98,
+        "min": 0.01,
+        "max": 88.78
+      },
+      "spine_tilt": {
+        "mean": 68.02,
+        "std": 21.0,
+        "min": 11.34,
+        "max": 89.91
+      },
+      "shoulder_alignment": {
+        "mean": 37.67,
+        "std": 23.34,
+        "min": 0.55,
+        "max": 88.97
+      }
+    },
+    "Anantasana_Step4": {
+      "left_knee_angle": {
+        "mean": 149.67,
+        "std": 44.83,
+        "min": 7.56,
+        "max": 179.67
+      },
+      "right_knee_angle": {
+        "mean": 152.31,
+        "std": 44.56,
+        "min": 1.8,
+        "max": 179.87
+      },
+      "left_elbow_angle": {
+        "mean": 144.6,
+        "std": 46.54,
+        "min": 12.22,
+        "max": 179.8
+      },
+      "right_elbow_angle": {
+        "mean": 149.38,
+        "std": 42.46,
+        "min": 17.57,
+        "max": 179.92
+      },
+      "hip_alignment": {
+        "mean": 38.83,
+        "std": 25.51,
+        "min": 0.11,
+        "max": 89.43
+      },
+      "spine_tilt": {
+        "mean": 75.63,
+        "std": 16.69,
+        "min": 6.46,
+        "max": 89.89
+      },
+      "shoulder_alignment": {
+        "mean": 29.79,
+        "std": 26.88,
+        "min": 0.25,
+        "max": 88.75
+      }
+    },
+    "Bhujangasana_Step1": {
+      "left_knee_angle": {
+        "mean": 142.87,
+        "std": 40.99,
+        "min": 0.66,
+        "max": 179.92
+      },
+      "right_knee_angle": {
+        "mean": 143.88,
+        "std": 37.86,
+        "min": 3.35,
+        "max": 179.87
+      },
+      "left_elbow_angle": {
+        "mean": 127.41,
+        "std": 45.62,
+        "min": 4.54,
+        "max": 179.37
+      },
+      "right_elbow_angle": {
+        "mean": 135.38,
+        "std": 43.08,
+        "min": 6.76,
+        "max": 179.83
+      },
+      "hip_alignment": {
+        "mean": 36.74,
+        "std": 25.52,
+        "min": 0.05,
+        "max": 89.87
+      },
+      "spine_tilt": {
+        "mean": 48.17,
+        "std": 25.07,
+        "min": 0.07,
+        "max": 89.73
+      },
+      "shoulder_alignment": {
+        "mean": 38.74,
+        "std": 26.02,
+        "min": 0.03,
+        "max": 89.56
+      }
+    },
+    "Bhujangasana_Step2": {
+      "left_knee_angle": {
+        "mean": 147.25,
+        "std": 41.52,
+        "min": 0.46,
+        "max": 179.9
+      },
+      "right_knee_angle": {
+        "mean": 150.38,
+        "std": 37.69,
+        "min": 0.27,
+        "max": 179.84
+      },
+      "left_elbow_angle": {
+        "mean": 83.22,
+        "std": 51.17,
+        "min": 0.72,
+        "max": 178.97
+      },
+      "right_elbow_angle": {
+        "mean": 81.81,
+        "std": 48.29,
+        "min": 0.26,
+        "max": 176.34
+      },
+      "hip_alignment": {
+        "mean": 30.5,
+        "std": 25.08,
+        "min": 0.4,
+        "max": 90.0
+      },
+      "spine_tilt": {
+        "mean": 49.03,
+        "std": 26.11,
+        "min": 0.21,
+        "max": 89.56
+      },
+      "shoulder_alignment": {
+        "mean": 32.97,
+        "std": 24.63,
+        "min": 0.23,
+        "max": 89.57
+      }
+    },
+    "Bhujangasana_Step3": {
+      "left_knee_angle": {
+        "mean": 142.87,
+        "std": 40.99,
+        "min": 0.66,
+        "max": 179.92
+      },
+      "right_knee_angle": {
+        "mean": 143.88,
+        "std": 37.86,
+        "min": 3.35,
+        "max": 179.87
+      },
+      "left_elbow_angle": {
+        "mean": 127.41,
+        "std": 45.62,
+        "min": 4.54,
+        "max": 179.37
+      },
+      "right_elbow_angle": {
+        "mean": 135.38,
+        "std": 43.08,
+        "min": 6.76,
+        "max": 179.83
+      },
+      "hip_alignment": {
+        "mean": 36.74,
+        "std": 25.52,
+        "min": 0.05,
+        "max": 89.87
+      },
+      "spine_tilt": {
+        "mean": 48.17,
+        "std": 25.07,
+        "min": 0.07,
+        "max": 89.73
+      },
+      "shoulder_alignment": {
+        "mean": 38.74,
+        "std": 26.02,
+        "min": 0.03,
+        "max": 89.56
+      }
+    },
+    "Marjariasana_Step1": {
+      "left_knee_angle": {
+        "mean": 95.46,
+        "std": 46.15,
+        "min": 2.94,
+        "max": 179.4
+      },
+      "right_knee_angle": {
+        "mean": 100.11,
+        "std": 40.85,
+        "min": 1.3,
+        "max": 179.34
+      },
+      "left_elbow_angle": {
+        "mean": 122.44,
+        "std": 39.74,
+        "min": 2.9,
+        "max": 178.35
+      },
+      "right_elbow_angle": {
+        "mean": 126.34,
+        "std": 36.21,
+        "min": 2.12,
+        "max": 179.79
+      },
+      "hip_alignment": {
+        "mean": 26.98,
+        "std": 20.8,
+        "min": 0.16,
+        "max": 87.55
+      },
+      "spine_tilt": {
+        "mean": 69.54,
+        "std": 21.65,
+        "min": 0.42,
+        "max": 89.87
+      },
+      "shoulder_alignment": {
+        "mean": 22.44,
+        "std": 22.91,
+        "min": 0.1,
+        "max": 89.47
+      }
+    },
+    "Marjariasana_Step2": {
+      "left_knee_angle": {
+        "mean": 106.36,
+        "std": 40.0,
+        "min": 3.0,
+        "max": 179.93
+      },
+      "right_knee_angle": {
+        "mean": 113.86,
+        "std": 41.46,
+        "min": 1.42,
+        "max": 179.1
+      },
+      "left_elbow_angle": {
+        "mean": 123.28,
+        "std": 37.19,
+        "min": 1.72,
+        "max": 179.44
+      },
+      "right_elbow_angle": {
+        "mean": 129.13,
+        "std": 36.43,
+        "min": 6.23,
+        "max": 179.9
+      },
+      "hip_alignment": {
+        "mean": 28.88,
+        "std": 23.95,
+        "min": 0.02,
+        "max": 89.09
+      },
+      "spine_tilt": {
+        "mean": 71.35,
+        "std": 20.38,
+        "min": 4.55,
+        "max": 89.92
+      },
+      "shoulder_alignment": {
+        "mean": 27.99,
+        "std": 23.5,
+        "min": 0.01,
+        "max": 89.89
+      }
+    },
+    "Marjariasana_Step3": {
+      "left_knee_angle": {
+        "mean": 101.07,
+        "std": 43.79,
+        "min": 0.95,
+        "max": 179.73
+      },
+      "right_knee_angle": {
+        "mean": 97.32,
+        "std": 40.47,
+        "min": 0.3,
+        "max": 179.63
+      },
+      "left_elbow_angle": {
+        "mean": 125.33,
+        "std": 34.89,
+        "min": 3.71,
+        "max": 179.86
+      },
+      "right_elbow_angle": {
+        "mean": 128.91,
+        "std": 40.92,
+        "min": 4.97,
+        "max": 179.63
+      },
+      "hip_alignment": {
+        "mean": 24.93,
+        "std": 21.77,
+        "min": 0.04,
+        "max": 89.11
+      },
+      "spine_tilt": {
+        "mean": 66.46,
+        "std": 23.59,
+        "min": 0.23,
+        "max": 89.78
+      },
+      "shoulder_alignment": {
+        "mean": 19.8,
+        "std": 20.27,
+        "min": 0.05,
+        "max": 88.76
+      }
+    },
+    "Marjariasana_Step4": {
+      "left_knee_angle": {
+        "mean": 104.45,
+        "std": 44.16,
+        "min": 4.32,
+        "max": 178.79
+      },
+      "right_knee_angle": {
+        "mean": 105.73,
+        "std": 43.41,
+        "min": 0.69,
+        "max": 177.89
+      },
+      "left_elbow_angle": {
+        "mean": 125.8,
+        "std": 32.47,
+        "min": 3.53,
+        "max": 174.84
+      },
+      "right_elbow_angle": {
+        "mean": 120.14,
+        "std": 36.34,
+        "min": 10.28,
+        "max": 179.8
+      },
+      "hip_alignment": {
+        "mean": 23.67,
+        "std": 22.25,
+        "min": 0.28,
+        "max": 88.69
+      },
+      "spine_tilt": {
+        "mean": 67.82,
+        "std": 22.94,
+        "min": 3.0,
+        "max": 89.97
+      },
+      "shoulder_alignment": {
+        "mean": 25.38,
+        "std": 23.3,
+        "min": 0.06,
+        "max": 86.18
+      }
+    },
+    "Parvatasana_Step1": {
+      "left_knee_angle": {
+        "mean": 132.08,
+        "std": 59.34,
+        "min": 3.07,
+        "max": 179.9
+      },
+      "right_knee_angle": {
+        "mean": 139.43,
+        "std": 56.17,
+        "min": 0.34,
+        "max": 179.9
+      },
+      "left_elbow_angle": {
+        "mean": 106.25,
+        "std": 46.65,
+        "min": 3.62,
+        "max": 177.54
+      },
+      "right_elbow_angle": {
+        "mean": 97.5,
+        "std": 48.12,
+        "min": 1.33,
+        "max": 179.84
+      },
+      "hip_alignment": {
+        "mean": 20.09,
+        "std": 20.18,
+        "min": 0.01,
+        "max": 85.82
+      },
+      "spine_tilt": {
+        "mean": 33.97,
+        "std": 17.81,
+        "min": 0.04,
+        "max": 71.2
+      },
+      "shoulder_alignment": {
+        "mean": 15.14,
+        "std": 18.47,
+        "min": 0.0,
+        "max": 86.21
+      }
+    },
+    "Parvatasana_Step2": {
+      "left_knee_angle": {
+        "mean": 44.86,
+        "std": 42.24,
+        "min": 0.06,
+        "max": 177.29
+      },
+      "right_knee_angle": {
+        "mean": 44.7,
+        "std": 41.62,
+        "min": 0.14,
+        "max": 177.74
+      },
+      "left_elbow_angle": {
+        "mean": 100.98,
+        "std": 43.99,
+        "min": 0.41,
+        "max": 179.88
+      },
+      "right_elbow_angle": {
+        "mean": 95.06,
+        "std": 47.85,
+        "min": 0.22,
+        "max": 179.24
+      },
+      "hip_alignment": {
+        "mean": 16.56,
+        "std": 19.87,
+        "min": 0.0,
+        "max": 88.63
+      },
+      "spine_tilt": {
+        "mean": 19.43,
+        "std": 13.54,
+        "min": 0.02,
+        "max": 73.57
+      },
+      "shoulder_alignment": {
+        "mean": 12.2,
+        "std": 17.32,
+        "min": 0.0,
+        "max": 88.19
+      }
+    },
+    "Parvatasana_Step3": {
+      "left_knee_angle": {
+        "mean": 76.12,
+        "std": 55.51,
+        "min": 0.12,
+        "max": 178.49
+      },
+      "right_knee_angle": {
+        "mean": 74.68,
+        "std": 52.12,
+        "min": 0.28,
+        "max": 179.88
+      },
+      "left_elbow_angle": {
+        "mean": 147.32,
+        "std": 51.41,
+        "min": 0.24,
+        "max": 179.87
+      },
+      "right_elbow_angle": {
+        "mean": 145.34,
+        "std": 53.97,
+        "min": 0.24,
+        "max": 179.93
+      },
+      "hip_alignment": {
+        "mean": 13.67,
+        "std": 17.64,
+        "min": 0.01,
+        "max": 89.16
+      },
+      "spine_tilt": {
+        "mean": 15.55,
+        "std": 15.43,
+        "min": 0.22,
+        "max": 84.04
+      },
+      "shoulder_alignment": {
+        "mean": 12.84,
+        "std": 18.5,
+        "min": 0.0,
+        "max": 87.16
+      }
+    },
+    "Parvatasana_Step4": {
+      "left_knee_angle": {
+        "mean": 84.62,
+        "std": 61.5,
+        "min": 0.44,
+        "max": 179.77
+      },
+      "right_knee_angle": {
+        "mean": 81.55,
+        "std": 62.22,
+        "min": 0.06,
+        "max": 179.9
+      },
+      "left_elbow_angle": {
+        "mean": 136.49,
+        "std": 34.92,
+        "min": 5.65,
+        "max": 179.87
+      },
+      "right_elbow_angle": {
+        "mean": 133.61,
+        "std": 39.28,
+        "min": 1.67,
+        "max": 179.86
+      },
+      "hip_alignment": {
+        "mean": 16.9,
+        "std": 20.29,
+        "min": 0.1,
+        "max": 87.15
+      },
+      "spine_tilt": {
+        "mean": 21.46,
+        "std": 20.41,
+        "min": 0.39,
+        "max": 88.48
+      },
+      "shoulder_alignment": {
+        "mean": 15.16,
+        "std": 21.58,
+        "min": 0.11,
+        "max": 89.38
+      }
+    },
+    "Sarvangasana_Step1": {
+      "left_knee_angle": {
+        "mean": 160.11,
+        "std": 33.54,
+        "min": 3.23,
+        "max": 179.96
+      },
+      "right_knee_angle": {
+        "mean": 161.78,
+        "std": 27.33,
+        "min": 4.15,
+        "max": 179.91
+      },
+      "left_elbow_angle": {
+        "mean": 140.84,
+        "std": 35.91,
+        "min": 3.2,
+        "max": 179.89
+      },
+      "right_elbow_angle": {
+        "mean": 147.3,
+        "std": 33.76,
+        "min": 18.79,
+        "max": 179.69
+      },
+      "hip_alignment": {
+        "mean": 45.62,
+        "std": 29.84,
+        "min": 0.27,
+        "max": 89.81
+      },
+      "spine_tilt": {
+        "mean": 53.39,
+        "std": 28.2,
+        "min": 0.43,
+        "max": 89.94
+      },
+      "shoulder_alignment": {
+        "mean": 42.48,
+        "std": 28.53,
+        "min": 0.01,
+        "max": 89.9
+      }
+    },
+    "Sarvangasana_Step2": {
+      "left_knee_angle": {
+        "mean": 117.74,
+        "std": 54.72,
+        "min": 2.61,
+        "max": 179.91
+      },
+      "right_knee_angle": {
+        "mean": 123.56,
+        "std": 50.94,
+        "min": 10.39,
+        "max": 179.49
+      },
+      "left_elbow_angle": {
+        "mean": 107.51,
+        "std": 51.64,
+        "min": 1.99,
+        "max": 179.07
+      },
+      "right_elbow_angle": {
+        "mean": 98.61,
+        "std": 52.91,
+        "min": 5.46,
+        "max": 177.23
+      },
+      "hip_alignment": {
+        "mean": 15.38,
+        "std": 20.16,
+        "min": 0.02,
+        "max": 88.76
+      },
+      "spine_tilt": {
+        "mean": 38.18,
+        "std": 24.58,
+        "min": 0.64,
+        "max": 89.76
+      },
+      "shoulder_alignment": {
+        "mean": 24.36,
+        "std": 22.7,
+        "min": 0.61,
+        "max": 89.4
+      }
+    },
+    "Tadasana_Step1": {
+      "left_knee_angle": {
+        "mean": 128.03,
+        "std": 53.14,
+        "min": 0.33,
+        "max": 179.78
+      },
+      "right_knee_angle": {
+        "mean": 127.59,
+        "std": 50.84,
+        "min": 0.88,
+        "max": 178.73
+      },
+      "left_elbow_angle": {
+        "mean": 137.8,
+        "std": 21.02,
+        "min": 65.93,
+        "max": 179.67
+      },
+      "right_elbow_angle": {
+        "mean": 142.2,
+        "std": 20.09,
+        "min": 98.28,
+        "max": 178.55
+      },
+      "hip_alignment": {
+        "mean": 9.39,
+        "std": 15.17,
+        "min": 0.0,
+        "max": 89.8
+      },
+      "spine_tilt": {
+        "mean": 13.77,
+        "std": 8.47,
+        "min": 0.02,
+        "max": 41.46
+      },
+      "shoulder_alignment": {
+        "mean": 7.63,
+        "std": 14.21,
+        "min": 0.08,
+        "max": 88.55
+      }
+    },
+    "Tadasana_Step2": {
+      "left_knee_angle": {
+        "mean": 100.89,
+        "std": 59.04,
+        "min": 1.02,
+        "max": 179.75
+      },
+      "right_knee_angle": {
+        "mean": 100.58,
+        "std": 62.17,
+        "min": 1.12,
+        "max": 179.87
+      },
+      "left_elbow_angle": {
+        "mean": 110.87,
+        "std": 58.63,
+        "min": 1.02,
+        "max": 179.81
+      },
+      "right_elbow_angle": {
+        "mean": 121.42,
+        "std": 61.14,
+        "min": 0.09,
+        "max": 179.91
+      },
+      "hip_alignment": {
+        "mean": 10.88,
+        "std": 17.5,
+        "min": 0.01,
+        "max": 85.72
+      },
+      "spine_tilt": {
+        "mean": 12.9,
+        "std": 9.89,
+        "min": 0.12,
+        "max": 77.47
+      },
+      "shoulder_alignment": {
+        "mean": 8.69,
+        "std": 9.24,
+        "min": 0.07,
+        "max": 50.55
+      }
+    },
+    "Tadasana_Step3": {
+      "left_knee_angle": {
+        "mean": 114.2,
+        "std": 58.47,
+        "min": 0.19,
+        "max": 179.86
+      },
+      "right_knee_angle": {
+        "mean": 124.35,
+        "std": 55.24,
+        "min": 2.14,
+        "max": 179.88
+      },
+      "left_elbow_angle": {
+        "mean": 134.14,
+        "std": 50.59,
+        "min": 4.65,
+        "max": 179.73
+      },
+      "right_elbow_angle": {
+        "mean": 137.04,
+        "std": 45.05,
+        "min": 6.51,
+        "max": 179.66
+      },
+      "hip_alignment": {
+        "mean": 10.19,
+        "std": 14.59,
+        "min": 0.12,
+        "max": 88.73
+      },
+      "spine_tilt": {
+        "mean": 13.51,
+        "std": 12.76,
+        "min": 0.08,
+        "max": 77.51
+      },
+      "shoulder_alignment": {
+        "mean": 11.99,
+        "std": 14.92,
+        "min": 0.04,
+        "max": 81.7
+      }
+    },
+    "Tadasana_Step5": {
+      "left_knee_angle": {
+        "mean": 128.03,
+        "std": 53.14,
+        "min": 0.33,
+        "max": 179.78
+      },
+      "right_knee_angle": {
+        "mean": 127.59,
+        "std": 50.84,
+        "min": 0.88,
+        "max": 178.73
+      },
+      "left_elbow_angle": {
+        "mean": 137.8,
+        "std": 21.02,
+        "min": 65.93,
+        "max": 179.67
+      },
+      "right_elbow_angle": {
+        "mean": 142.2,
+        "std": 20.09,
+        "min": 98.28,
+        "max": 178.55
+      },
+      "hip_alignment": {
+        "mean": 9.39,
+        "std": 15.17,
+        "min": 0.0,
+        "max": 89.8
+      },
+      "spine_tilt": {
+        "mean": 13.77,
+        "std": 8.47,
+        "min": 0.02,
+        "max": 41.46
+      },
+      "shoulder_alignment": {
+        "mean": 7.63,
+        "std": 14.21,
+        "min": 0.08,
+        "max": 88.55
+      }
+    },
+    "Vajrasana_Step1": {
+      "left_knee_angle": {
+        "mean": 162.84,
+        "std": 39.48,
+        "min": 22.16,
+        "max": 179.88
+      },
+      "right_knee_angle": {
+        "mean": 160.75,
+        "std": 37.52,
+        "min": 19.88,
+        "max": 178.98
+      },
+      "left_elbow_angle": {
+        "mean": 137.89,
+        "std": 26.19,
+        "min": 66.48,
+        "max": 176.1
+      },
+      "right_elbow_angle": {
+        "mean": 124.08,
+        "std": 34.86,
+        "min": 27.47,
+        "max": 172.84
+      },
+      "hip_alignment": {
+        "mean": 24.93,
+        "std": 25.28,
+        "min": 1.66,
+        "max": 88.57
+      },
+      "spine_tilt": {
+        "mean": 35.48,
+        "std": 22.24,
+        "min": 2.77,
+        "max": 82.85
+      },
+      "shoulder_alignment": {
+        "mean": 19.45,
+        "std": 22.41,
+        "min": 1.13,
+        "max": 85.47
+      }
+    },
+    "Vajrasana_Step2": {
+      "left_knee_angle": {
+        "mean": 40.37,
+        "std": 39.88,
+        "min": 0.75,
+        "max": 133.72
+      },
+      "right_knee_angle": {
+        "mean": 39.88,
+        "std": 41.47,
+        "min": 0.2,
+        "max": 131.95
+      },
+      "left_elbow_angle": {
+        "mean": 92.36,
+        "std": 37.3,
+        "min": 7.63,
+        "max": 173.4
+      },
+      "right_elbow_angle": {
+        "mean": 96.09,
+        "std": 47.51,
+        "min": 1.86,
+        "max": 174.8
+      },
+      "hip_alignment": {
+        "mean": 20.16,
+        "std": 21.61,
+        "min": 0.31,
+        "max": 73.11
+      },
+      "spine_tilt": {
+        "mean": 24.97,
+        "std": 15.58,
+        "min": 0.4,
+        "max": 76.17
+      },
+      "shoulder_alignment": {
+        "mean": 18.82,
+        "std": 23.59,
+        "min": 0.31,
+        "max": 76.73
+      }
+    },
+    "Anantasana": {
+      "left_knee_angle": {
+        "mean": 141.86,
+        "std": 48.46,
+        "min": 2.05,
+        "max": 179.96
+      },
+      "right_knee_angle": {
+        "mean": 137.48,
+        "std": 52.89,
+        "min": 1.43,
+        "max": 179.91
+      },
+      "left_elbow_angle": {
+        "mean": 114.48,
+        "std": 58.3,
+        "min": 0.35,
+        "max": 179.89
+      },
+      "right_elbow_angle": {
+        "mean": 120.56,
+        "std": 56.78,
+        "min": 0.58,
+        "max": 179.92
+      },
+      "hip_alignment": {
+        "mean": 39.73,
+        "std": 27.78,
+        "min": 0.01,
+        "max": 89.81
+      },
+      "spine_tilt": {
+        "mean": 61.8,
+        "std": 26.04,
+        "min": 0.43,
+        "max": 89.94
+      },
+      "shoulder_alignment": {
+        "mean": 36.47,
+        "std": 26.52,
+        "min": 0.01,
+        "max": 89.9
+      }
+    },
+    "Bhujangasana": {
+      "left_knee_angle": {
+        "mean": 144.27,
+        "std": 41.21,
+        "min": 0.46,
+        "max": 179.92
+      },
+      "right_knee_angle": {
+        "mean": 145.96,
+        "std": 37.93,
+        "min": 0.27,
+        "max": 179.87
+      },
+      "left_elbow_angle": {
+        "mean": 113.24,
+        "std": 51.76,
+        "min": 0.72,
+        "max": 179.37
+      },
+      "right_elbow_angle": {
+        "mean": 118.21,
+        "std": 51.32,
+        "min": 0.26,
+        "max": 179.83
+      },
+      "hip_alignment": {
+        "mean": 34.74,
+        "std": 25.55,
+        "min": 0.05,
+        "max": 90.0
+      },
+      "spine_tilt": {
+        "mean": 48.44,
+        "std": 25.41,
+        "min": 0.07,
+        "max": 89.73
+      },
+      "shoulder_alignment": {
+        "mean": 36.89,
+        "std": 25.72,
+        "min": 0.03,
+        "max": 89.57
+      }
+    },
+    "Marjariasana": {
+      "left_knee_angle": {
+        "mean": 102.3,
+        "std": 43.34,
+        "min": 0.95,
+        "max": 179.93
+      },
+      "right_knee_angle": {
+        "mean": 105.64,
+        "std": 42.06,
+        "min": 0.3,
+        "max": 179.63
+      },
+      "left_elbow_angle": {
+        "mean": 123.98,
+        "std": 36.53,
+        "min": 1.72,
+        "max": 179.86
+      },
+      "right_elbow_angle": {
+        "mean": 126.66,
+        "std": 37.46,
+        "min": 2.12,
+        "max": 179.9
+      },
+      "hip_alignment": {
+        "mean": 26.61,
+        "std": 22.55,
+        "min": 0.02,
+        "max": 89.11
+      },
+      "spine_tilt": {
+        "mean": 69.25,
+        "std": 21.95,
+        "min": 0.23,
+        "max": 89.97
+      },
+      "shoulder_alignment": {
+        "mean": 24.5,
+        "std": 22.93,
+        "min": 0.01,
+        "max": 89.89
+      }
+    },
+    "Parvatasana": {
+      "left_knee_angle": {
+        "mean": 76.04,
+        "std": 60.71,
+        "min": 0.06,
+        "max": 179.9
+      },
+      "right_knee_angle": {
+        "mean": 76.04,
+        "std": 60.42,
+        "min": 0.06,
+        "max": 179.9
+      },
+      "left_elbow_angle": {
+        "mean": 123.18,
+        "std": 49.59,
+        "min": 0.24,
+        "max": 179.88
+      },
+      "right_elbow_angle": {
+        "mean": 118.65,
+        "std": 53.33,
+        "min": 0.22,
+        "max": 179.93
+      },
+      "hip_alignment": {
+        "mean": 16.3,
+        "std": 19.48,
+        "min": 0.0,
+        "max": 89.16
+      },
+      "spine_tilt": {
+        "mean": 20.92,
+        "std": 17.46,
+        "min": 0.02,
+        "max": 88.48
+      },
+      "shoulder_alignment": {
+        "mean": 13.46,
+        "std": 18.85,
+        "min": 0.0,
+        "max": 89.38
+      }
+    },
+    "Sarvangasana": {
+      "left_knee_angle": {
+        "mean": 148.6,
+        "std": 44.59,
+        "min": 2.61,
+        "max": 179.96
+      },
+      "right_knee_angle": {
+        "mean": 151.4,
+        "std": 39.22,
+        "min": 4.15,
+        "max": 179.91
+      },
+      "left_elbow_angle": {
+        "mean": 131.79,
+        "std": 43.4,
+        "min": 1.99,
+        "max": 179.89
+      },
+      "right_elbow_angle": {
+        "mean": 134.07,
+        "std": 45.39,
+        "min": 5.46,
+        "max": 179.69
+      },
+      "hip_alignment": {
+        "mean": 37.41,
+        "std": 30.66,
+        "min": 0.02,
+        "max": 89.81
+      },
+      "spine_tilt": {
+        "mean": 49.26,
+        "std": 28.09,
+        "min": 0.43,
+        "max": 89.94
+      },
+      "shoulder_alignment": {
+        "mean": 37.56,
+        "std": 28.25,
+        "min": 0.01,
+        "max": 89.9
+      }
+    },
+    "Tadasana": {
+      "left_knee_angle": {
+        "mean": 119.38,
+        "std": 56.68,
+        "min": 0.19,
+        "max": 179.86
+      },
+      "right_knee_angle": {
+        "mean": 121.57,
+        "std": 55.27,
+        "min": 0.88,
+        "max": 179.88
+      },
+      "left_elbow_angle": {
+        "mean": 131.69,
+        "std": 40.61,
+        "min": 1.02,
+        "max": 179.81
+      },
+      "right_elbow_angle": {
+        "mean": 136.92,
+        "std": 38.87,
+        "min": 0.09,
+        "max": 179.91
+      },
+      "hip_alignment": {
+        "mean": 9.88,
+        "std": 15.52,
+        "min": 0.0,
+        "max": 89.8
+      },
+      "spine_tilt": {
+        "mean": 13.54,
+        "std": 9.96,
+        "min": 0.02,
+        "max": 77.51
+      },
+      "shoulder_alignment": {
+        "mean": 8.91,
+        "std": 13.7,
+        "min": 0.04,
+        "max": 88.55
+      }
+    },
+    "Vajrasana": {
+      "left_knee_angle": {
+        "mean": 93.13,
+        "std": 72.49,
+        "min": 0.75,
+        "max": 179.88
+      },
+      "right_knee_angle": {
+        "mean": 91.95,
+        "std": 71.89,
+        "min": 0.2,
+        "max": 178.98
+      },
+      "left_elbow_angle": {
+        "mean": 111.97,
+        "std": 39.95,
+        "min": 7.63,
+        "max": 176.1
+      },
+      "right_elbow_angle": {
+        "mean": 108.15,
+        "std": 44.72,
+        "min": 1.86,
+        "max": 174.8
+      },
+      "hip_alignment": {
+        "mean": 22.22,
+        "std": 23.38,
+        "min": 0.31,
+        "max": 88.57
+      },
+      "spine_tilt": {
+        "mean": 29.5,
+        "std": 19.45,
+        "min": 0.4,
+        "max": 82.85
+      },
+      "shoulder_alignment": {
+        "mean": 19.09,
+        "std": 23.09,
+        "min": 0.31,
+        "max": 85.47
+      }
+    }
+  },
+  "angle_feedback_templates": {
+    "left_knee_angle": {
+      "name": "Left Knee",
+      "too_high": "Straighten your left knee more. Target: {mean:.0f}\u00b0",
+      "too_low": "Bend your left knee more. Target: {mean:.0f}\u00b0"
+    },
+    "right_knee_angle": {
+      "name": "Right Knee",
+      "too_high": "Straighten your right knee more. Target: {mean:.0f}\u00b0",
+      "too_low": "Bend your right knee more. Target: {mean:.0f}\u00b0"
+    },
+    "left_elbow_angle": {
+      "name": "Left Arm",
+      "too_high": "Extend your left arm more fully. Target: {mean:.0f}\u00b0",
+      "too_low": "Bend your left arm slightly. Target: {mean:.0f}\u00b0"
+    },
+    "right_elbow_angle": {
+      "name": "Right Arm",
+      "too_high": "Extend your right arm more fully. Target: {mean:.0f}\u00b0",
+      "too_low": "Bend your right arm slightly. Target: {mean:.0f}\u00b0"
+    },
+    "hip_alignment": {
+      "name": "Hips",
+      "too_high": "Your hips are uneven. Try to level them.",
+      "too_low": "Your hips are uneven. Try to level them."
+    },
+    "spine_tilt": {
+      "name": "Spine",
+      "too_high": "Your spine is leaning too much. Try to align your torso.",
+      "too_low": "Your spine is leaning too much. Try to align your torso."
+    },
+    "shoulder_alignment": {
+      "name": "Shoulders",
+      "too_high": "Your shoulders are uneven. Try to level them.",
+      "too_low": "Your shoulders are uneven. Try to level them."
+    }
+  },
+  "body_part_errors": {
+    "Anantasana": [
+      "Legs",
+      "Neck",
+      "Knee",
+      "Hand"
+    ],
+    "Parvatasana": [
+      "Hand"
+    ],
+    "Tadasana": [
+      "Legs",
+      "Legs and Hand",
+      "Hands and Legs",
+      "Standing"
+    ]
+  },
+  "threshold_multiplier": 1.5
+}

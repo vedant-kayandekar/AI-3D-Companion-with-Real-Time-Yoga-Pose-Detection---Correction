@@ -1,0 +1,77 @@
+{
+  "classes": [
+    "Anantasana_Step1",
+    "Anantasana_Step2",
+    "Anantasana_Step3",
+    "Anantasana_Step4",
+    "Bhujangasana_Step1",
+    "Bhujangasana_Step2",
+    "Bhujangasana_Step3",
+    "Marjariasana_Step1",
+    "Marjariasana_Step2",
+    "Marjariasana_Step3",
+    "Marjariasana_Step4",
+    "Parvatasana_Step1",
+    "Parvatasana_Step2",
+    "Parvatasana_Step3",
+    "Parvatasana_Step4",
+    "Sarvangasana_Step1",
+    "Sarvangasana_Step2",
+    "Tadasana_Step1",
+    "Tadasana_Step2",
+    "Tadasana_Step3",
+    "Tadasana_Step4",
+    "Tadasana_Step5",
+    "Vajrasana_Step1",
+    "Vajrasana_Step2"
+  ],
+  "pose_names": [
+    "Anantasana",
+    "Bhujangasana",
+    "Marjariasana",
+    "Parvatasana",
+    "Sarvangasana",
+    "Tadasana",
+    "Vajrasana"
+  ],
+  "steps_per_pose": {
+    "Anantasana": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "Bhujangasana": [
+      1,
+      2,
+      3
+    ],
+    "Marjariasana": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "Parvatasana": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "Sarvangasana": [
+      1,
+      2
+    ],
+    "Tadasana": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "Vajrasana": [
+      1,
+      2
+    ]
+  }
+}
