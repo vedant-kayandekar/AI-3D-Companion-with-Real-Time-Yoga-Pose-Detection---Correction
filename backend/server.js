@@ -12,6 +12,7 @@ import { spawn } from "child_process";
 import jwt from "jsonwebtoken";
 import pool from "./db.js";
 import axios from "axios";
+import os from "os";
 
 dotenv.config();
 
@@ -34,7 +35,7 @@ app.use(cors());
 // ==========================================
 // 1. PIPER TTS POOL (Primary)
 // ==========================================
-const PIPER_BINARY = path.join(__dirname, "piper", "piper", "piper.exe");
+const PIPER_BINARY = path.join(__dirname, "piper", "piper", os.platform() === "win32" ? "piper.exe" : "piper");
 const PIPER_MODEL = path.join(__dirname, "piper", "en_US-amy-medium.onnx");
 const PIPER_POOL_SIZE = 3;
 const PIPER_SAMPLE_RATE = 22050;
