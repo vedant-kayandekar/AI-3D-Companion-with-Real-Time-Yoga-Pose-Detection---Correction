@@ -244,6 +244,11 @@ const detectAnimationAndExpression = (sentence, role, seq) => {
 // ==========================================
 const server = app.listen(port, () => {
     console.log(`🚀 Unified Yoga AI Backend listening on port ${port}`);
+    // Log the last 15 characters of the RAG URL to verify the .env is loaded correctly
+    const maskedUrl = ragServiceUrl.length > 15 
+        ? "..." + ragServiceUrl.slice(-15) 
+        : ragServiceUrl;
+    console.log(`🔗 Configured RAG Service URL ends with: ${maskedUrl}`);
 });
 
 const wss = new WebSocketServer({ server });
@@ -346,7 +351,7 @@ async function processChatRequest({ userId, chatSessionId, userMessage, role, us
 
         // If RAG is requested, ask the RAG service first
         if (useRAG) {
-            console.log(`🧠 RAG Mode ON: Sending query to knowledge base...`);
+            console.log(`🧠 RAG Mode ON: Sending query to knowledge base at ${ragServiceUrl}...`);
             try {
                 const ragForm = new FormData();
                 ragForm.append("question", userMessage);
@@ -355,17 +360,30 @@ async function processChatRequest({ userId, chatSessionId, userMessage, role, us
                 });
                 
                 if (ragRes.data && ragRes.data.response) {
-                    console.log(`📚 Success: Context from knowledge base incorporated!`);
-                    augmentedMessage = `Context from knowledge base: ${ragRes.data.response}\n\nUser Question: ${userMessage}\n\nProvide a friendly response incorporating the knowledge base context.`;
+                    console.log(`📚 Success: Got response directly from RAG (Groq)! Bypassing Gemini.`);
+                    const ragAnswer = ragRes.data.response;
                     source = "rag";
+                    
+                    // Directly stream the RAG response to the client
+                    let seq = 0;
+                    const sentences = ragAnswer.match(/[^.!?।\n]+[.!?।\n]+/g) || [ragAnswer];
+                    
+                    for (const sentence of sentences) {
+                        if (sentence.trim().length > 2) {
+                            await processSentence(sentence.trim(), seq++, userId, chatSessionId, role, source);
+                        }
+                    }
+                    return; // Completely bypass Gemini!
                 } else {
-                    console.log(`⚠️ RAG returned empty or invalid response. Proceeding without context.`);
+                    console.log(`⚠️ RAG returned empty response. Proceeding to Gemini fallback.`);
                 }
             } catch (e) {
-                console.error("⚠️ RAG Service error, falling back to standard AI:", e.message);
+                console.error("❌ RAG Service error details:", e.response?.data || e.message);
+                console.error("⚠️ Falling back to standard Gemini AI...");
             }
         }
 
+        console.log(`🤖 Using Gemini (Google) as fallback...`);
         const model = genAI.getGenerativeModel({
             model: "gemini-2.5-flash",
             systemInstruction: { role: "system", parts: [{ text: systemInstruction }] },
