@@ -30,7 +30,7 @@ export const ChatProvider = ({ children }) => {
   const [guestId, setGuestId] = useState(localStorage.getItem("guestId") || crypto.randomUUID());
   
   const [role, setRole] = useState("Yoga");
-  const [isRAGMode, setIsRAGMode] = useState(false); // New RAG mode toggle
+  const [isRAGMode, setIsRAGMode] = useState(true); // RAG always on by default
   
   const [yogaPose, setYogaPose] = useState(null);
   const [ws, setWs] = useState(null);

@@ -3,62 +3,96 @@ import {
   ContactShadows,
   Environment,
   Text,
+  Sparkles,
+  MeshDistortMaterial,
+  Float,
+  Html
 } from "@react-three/drei";
 import { Suspense, useEffect, useRef, useState } from "react";
+import { useFrame } from "@react-three/fiber";
 import { useChat } from "../hooks/useChat";
 import { Avatar } from "./Avatar";
 import { Model as Avatar2 } from "./Avatar2";
 import { Avatar as Avatar3 } from "./Avatar3";
 import { Avatar_yoga } from "./Avatar_yoga";
+import * as THREE from "three";
 
-const Dots = (props) => {
-  const { loading, isRAGMode } = useChat();
-  const [loadingText, setLoadingText] = useState("");
-  useEffect(() => {
-    if (loading) {
-      if (isRAGMode) {
-        setLoadingText("🧠 Searching Knowledge Base...");
-      } else {
-        const interval = setInterval(() => {
-          setLoadingText((loadingText) => {
-            if (loadingText.length > 2) {
-              return ".";
-            }
-            return loadingText + ".";
-          });
-        }, 800);
-        return () => clearInterval(interval);
-      }
-    } else {
-      setLoadingText("");
+/* =========================================================
+   RAG PROCESSING INDICATOR (Glowing Blob & Text)
+   ========================================================= */
+const ProcessingIndicator = () => {
+  const { loading } = useChat();
+  const blobRef = useRef();
+
+  useFrame(({ clock }) => {
+    if (blobRef.current) {
+      blobRef.current.rotation.y = clock.getElapsedTime() * 0.5;
+      blobRef.current.rotation.z = clock.getElapsedTime() * 0.2;
     }
-  }, [loading, isRAGMode]);
-  
+  });
+
   if (!loading) return null;
+
   return (
-    <group {...props}>
-      <Text fontSize={0.14} anchorX={"left"} anchorY={"bottom"}>
-        {loadingText}
-        <meshBasicMaterial attach="material" color="black" />
+    <group>
+      {/* Revolving glowing blob under the avatar */}
+      <group position={[0, -0.5, 0]}>
+        <Float speed={2} rotationIntensity={1} floatIntensity={1}>
+          <mesh ref={blobRef} scale={[1.2, 0.4, 1.2]}>
+            <torusGeometry args={[0.5, 0.15, 32, 100]} />
+            <MeshDistortMaterial
+              color="#6b8f71"
+              emissive="#9b8ec4"
+              emissiveIntensity={0.5}
+              distort={0.4}
+              speed={3}
+              transparent
+              opacity={0.7}
+            />
+          </mesh>
+        </Float>
+      </group>
+
+      {/* Floating text above the avatar */}
+      <Text 
+        position={[0, 2.1, 0]} 
+        fontSize={0.12} 
+        anchorX="center" 
+        anchorY="bottom"
+        color="#3d4e3e"
+        maxWidth={2.5}
+        textAlign="center"
+      >
+        Answers through yoga expert knowledge base without hallucination...
+        <meshBasicMaterial attach="material" color="#6b8f71" />
       </Text>
     </group>
   );
 };
 
+/* =========================================================
+   3D LOADING FALLBACK (Twinkling Stars)
+   ========================================================= */
+const LoadingStars = () => (
+  <group position={[0, 1, 0]}>
+    <Sparkles count={100} scale={4} size={4} speed={0.4} opacity={1} color="#9b8ec4" />
+    <Text position={[0, 0, 0]} fontSize={0.2} color="#6b8f71" anchorX="center" anchorY="center">
+      Materializing your instructor...
+    </Text>
+  </group>
+);
+
 export const Experience = () => {
   const cameraControls = useRef();
   const { cameraZoomed, message, role } = useChat();
 
-  // Set initial camera on mount
   useEffect(() => {
-    cameraControls.current.setLookAt(0, 2, 5, 0, 1.5, 0);
+    cameraControls.current?.setLookAt(0, 2, 5, 0, 1.5, 0);
   }, []);
 
-  // Reset camera when role changes OR zoom toggles — force reset removes stale user drag
   useEffect(() => {
     if (cameraControls.current) {
-      // Reset camera to default framing for the avatar
-      cameraControls.current.reset(true); // Reset any user panning/rotation
+      cameraControls.current.reset(true);
       if (cameraZoomed) {
         cameraControls.current.setLookAt(0, 1.5, 1.5, 0, 1.5, 0, true);
       } else {
@@ -71,14 +105,16 @@ export const Experience = () => {
     <>
       <CameraControls ref={cameraControls} />
       <Environment preset="sunset" />
-      <Suspense>
-        <Dots position-y={1.75} position-x={-0.02} />
+      
+      <ProcessingIndicator />
+      
+      <Suspense fallback={<LoadingStars />}>
+        {role === "Yoga" && <Avatar_yoga />}
+        {role === "Kickboxing" && <Avatar2 yogaPose={message?.yogaPose} />}
+        {role === "Friend" && <Avatar3 />}
       </Suspense>
-      {/* Map Yoga role directly to the preferred new_yoga_assistant.glb model */}
-      {role === "Yoga" && <Avatar_yoga />}
-      {role === "Kickboxing" && <Avatar2 yogaPose={message?.yogaPose} />}
-      {role === "Friend" && <Avatar3 />}
-      <ContactShadows opacity={0.7} />
+      
+      <ContactShadows opacity={0.7} position={[0, -1, 0]} />
     </>
   );
 };
