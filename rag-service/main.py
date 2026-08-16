@@ -23,6 +23,10 @@ app.middleware("http")(catch_exception_middleware)
 def health_check():
     return {"status": "ok", "service": "RAG"}
 
+@app.get("/")
+def root():
+    return {"message": "Yoga RAG Service is running. Use /ask/ for queries."}
+
 # routers
 app.include_router(upload_router)
 app.include_router(ask_router)

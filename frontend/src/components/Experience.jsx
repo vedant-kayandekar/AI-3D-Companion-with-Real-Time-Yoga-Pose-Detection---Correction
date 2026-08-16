@@ -36,7 +36,7 @@ const ProcessingIndicator = () => {
   return (
     <group>
       {/* Revolving glowing blob under the avatar */}
-      <group position={[0, -0.5, 0]}>
+      <group position={[0, -0.2, 0]}>
         <Float speed={2} rotationIntensity={1} floatIntensity={1}>
           <mesh ref={blobRef} scale={[1.2, 0.4, 1.2]}>
             <torusGeometry args={[0.5, 0.15, 32, 100]} />
@@ -53,19 +53,14 @@ const ProcessingIndicator = () => {
         </Float>
       </group>
 
-      {/* Floating text above the avatar */}
-      <Text 
-        position={[0, 2.1, 0]} 
-        fontSize={0.12} 
-        anchorX="center" 
-        anchorY="bottom"
-        color="#3d4e3e"
-        maxWidth={2.5}
-        textAlign="center"
-      >
-        Answers through yoga expert knowledge base without hallucination...
-        <meshBasicMaterial attach="material" color="#6b8f71" />
-      </Text>
+      {/* Floating text always visible on screen */}
+      <Html position={[0, 1.2, 0]} center zIndexRange={[100, 0]}>
+        <div className="w-[200px] text-center bg-white/80 backdrop-blur-md border border-[#c8dac8] px-3 py-2 rounded-xl shadow-lg pointer-events-none animate-pulse">
+          <p className="text-[#3d4e3e] text-xs font-semibold leading-tight">
+            Answers through yoga expert knowledge base without hallucination...
+          </p>
+        </div>
+      </Html>
     </group>
   );
 };
@@ -74,11 +69,13 @@ const ProcessingIndicator = () => {
    3D LOADING FALLBACK (Twinkling Stars)
    ========================================================= */
 const LoadingStars = () => (
-  <group position={[0, 1, 0]}>
-    <Sparkles count={100} scale={4} size={4} speed={0.4} opacity={1} color="#9b8ec4" />
-    <Text position={[0, 0, 0]} fontSize={0.2} color="#6b8f71" anchorX="center" anchorY="center">
-      Materializing your instructor...
-    </Text>
+  <group position={[0, 1.3, 0]}>
+    <Sparkles count={150} scale={5} size={5} speed={0.5} opacity={1} color="#9b8ec4" />
+    <Html center zIndexRange={[100, 0]}>
+       <div className="text-[#6b8f71] text-sm font-bold bg-white/70 px-4 py-2 rounded-full shadow-sm backdrop-blur-md">
+         Materializing your instructor...
+       </div>
+    </Html>
   </group>
 );
 

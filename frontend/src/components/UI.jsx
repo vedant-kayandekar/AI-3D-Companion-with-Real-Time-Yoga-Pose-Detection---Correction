@@ -150,9 +150,9 @@ export const UI = ({ hidden }) => {
       <button 
         onClick={() => setShowUploadModal(true)}
         title="Admin: Upload PDFs"
-        className="fixed bottom-6 left-6 z-50 w-8 h-8 rounded-full bg-white/40 hover:bg-white/90 border border-[#c8dac8] text-[#8aad90] hover:text-[#6b8f71] flex items-center justify-center transition-all shadow-sm backdrop-blur-sm pointer-events-auto"
+        className="fixed top-20 left-4 z-[60] w-9 h-9 rounded-full bg-white/70 hover:bg-white border border-[#c8dac8] text-[#6b8f71] flex items-center justify-center transition-all shadow-md backdrop-blur-md pointer-events-auto"
       >
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
         </svg>
       </button>
