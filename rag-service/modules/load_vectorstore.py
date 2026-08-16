@@ -37,20 +37,23 @@ except Exception:
     raise
 
 # ✅ LAZY LOADING - Embeddings created ONLY when needed (not on startup)
-def get_huggingface_embeddings():
+def get_google_embeddings():
     """Load embeddings model only when first called (avoids startup hang)"""
     try:
-        from langchain_huggingface import HuggingFaceEmbeddings
-        return HuggingFaceEmbeddings(
-            model_name="sentence-transformers/all-MiniLM-L6-v2",
-            model_kwargs={'device': 'cpu'}  # Use CPU to avoid GPU issues
+        from langchain_google_genai import GoogleGenerativeAIEmbeddings
+        api_key = os.getenv("GEMINI_API_KEY")
+        if not api_key:
+            raise ValueError("GEMINI_API_KEY is not set in the environment")
+        return GoogleGenerativeAIEmbeddings(
+            model="models/embedding-001",
+            google_api_key=api_key
         )
     except Exception as e:
-        logger.exception(f"Failed to load HuggingFace embeddings: {e}")
+        logger.exception(f"Failed to load Google embeddings: {e}")
         raise
 
 # --- initialize pinecone index ---
-def init_pinecone(api_key: str, environment: str, index_name: str, dimension: int = 384):
+def init_pinecone(api_key: str, environment: str, index_name: str, dimension: int = 768):
     if not api_key:
         raise RuntimeError("PINECONE_API_KEY is not set")
     
@@ -75,11 +78,11 @@ def load_vectorstore(uploaded_files):
         api_key=PINECONE_API_KEY,
         environment=PINECONE_ENV,
         index_name=PINECONE_INDEX_NAME,
-        dimension=384
+        dimension=768
     )
 
     # ✅ LAZY LOAD embeddings here (AFTER startup)
-    embed_model = get_huggingface_embeddings()
+    embed_model = get_google_embeddings()
     file_paths = []
 
     for file in uploaded_files:

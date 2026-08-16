@@ -4,7 +4,7 @@ from modules.llm import get_llm_chain
 from modules.query_handlers import query_chain
 from langchain_core.documents import Document
 from langchain_core.retrievers import BaseRetriever
-from langchain_huggingface import HuggingFaceEmbeddings  # ✅ CHANGED: Google → HuggingFace
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from pinecone import Pinecone
 from pydantic import Field
 from typing import List, Optional
@@ -21,7 +21,10 @@ async def ask_question(question: str = Form(...)):
         # embed model + pinecone setup
         pc = Pinecone(api_key=os.environ.get("PINECONE_API_KEY"))
         index = pc.Index(os.environ.get("PINECONE_INDEX_NAME", "yogaindex2"))
-        embed_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")  # ✅ CHANGED: Google → HuggingFace
+        api_key = os.environ.get("GEMINI_API_KEY")
+        if not api_key:
+            raise ValueError("GEMINI_API_KEY is not set in the environment")
+        embed_model = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key=api_key)
         embedded_query = embed_model.embed_query(question)
         res = index.query(vector=embedded_query, top_k=3, include_metadata=True)
 
