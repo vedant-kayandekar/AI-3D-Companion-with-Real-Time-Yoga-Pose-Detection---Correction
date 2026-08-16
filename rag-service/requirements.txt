@@ -15,8 +15,7 @@ pinecone
 
 # Embeddings
 langchain-google-genai
-langchain-huggingface
-sentence-transformers
+
 # PDF Parsing
 PyPDF
 
