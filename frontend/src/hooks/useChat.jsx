@@ -261,6 +261,13 @@ export const ChatProvider = ({ children }) => {
     }
   };
 
+  // Wake up Render Free Tier on page load
+  useEffect(() => {
+    fetch(`${ragServiceUrl}/health`).catch(() => {
+      console.log("Wake up ping sent to RAG service");
+    });
+  }, []);
+
   return (
     <ChatContext.Provider
       value={{
