@@ -24,7 +24,7 @@ async def ask_question(question: str = Form(...)):
         api_key = os.environ.get("GEMINI_API_KEY")
         if not api_key:
             raise ValueError("GEMINI_API_KEY is not set in the environment")
-        embed_model = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key=api_key)
+        embed_model = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004", google_api_key=api_key)
         embedded_query = embed_model.embed_query(question)
         res = index.query(vector=embedded_query, top_k=3, include_metadata=True)
 

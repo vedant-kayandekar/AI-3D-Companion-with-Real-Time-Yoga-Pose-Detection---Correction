@@ -1,7 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { HeroAvatar } from "./HeroAvatar";
-import { Environment, Float, Sparkles, ContactShadows } from "@react-three/drei";
+import { Float, Sparkles, ContactShadows } from "@react-three/drei";
+
+/* =========================================================
+   3D HERO FALLBACK (Instant 0ms Meditation Aura)
+   ========================================================= */
+const HeroAvatarFallback = () => (
+  <group position={[0, -2, -4]}>
+    <Sparkles count={45} scale={4} size={3} speed={0.4} opacity={0.5} color="#9b8ec4" />
+    <mesh position={[0, 1.2, 0]}>
+      <sphereGeometry args={[0.3, 16, 16]} />
+      <meshBasicMaterial color="#6b8f71" transparent opacity={0.12} wireframe />
+    </mesh>
+  </group>
+);
 
 export const HeroSection = ({ onGetStarted }) => {
 
@@ -35,16 +48,23 @@ export const HeroSection = ({ onGetStarted }) => {
       {/* ── 3D Avatar Canvas (full-screen background) ── */}
       <div className="absolute inset-0 z-[1]">
         <Canvas camera={{ position: [0, 0, 6], fov: 44 }}>
-          <ambientLight intensity={0.65} />
+          {/* High-performance local studio lighting (replaces 2MB remote HDR download) */}
+          <ambientLight intensity={0.7} />
+          <hemisphereLight skyColor="#f4fbf4" groundColor="#e8e2f4" intensity={0.65} />
+          <directionalLight position={[5, 8, 4]} intensity={0.85} color="#ffffff" />
           <spotLight position={[8, 10, 8]} angle={0.18} penumbra={1} intensity={0.9} color="#a8c8a0" />
           <pointLight position={[-8, -6, -8]} intensity={0.35} color="#c4b8e8" />
-          <Environment preset="apartment" />
-          <Float speed={1.4} rotationIntensity={0.08} floatIntensity={0.18}>
-            <HeroAvatar
-              modelPath="/models/new_yoga_assistant.glb"
-              audioPath="/audios/intro_0.wav"
-            />
-          </Float>
+          <pointLight position={[6, 4, 6]} intensity={0.3} color="#a8c8a0" />
+
+          <Suspense fallback={<HeroAvatarFallback />}>
+            <Float speed={1.4} rotationIntensity={0.08} floatIntensity={0.18}>
+              <HeroAvatar
+                modelPath="/models/new_yoga_assistant.glb"
+                audioPath="/audios/intro_0.wav"
+              />
+            </Float>
+          </Suspense>
+
           <ContactShadows position={[0, -2.1, 0]} opacity={0.45} scale={18} blur={2.5} far={5} />
           <Sparkles count={40} scale={9} size={2.5} speed={0.25} opacity={0.3} color="#8aad90" />
         </Canvas>

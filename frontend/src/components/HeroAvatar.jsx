@@ -19,21 +19,18 @@ export function HeroAvatar({ modelPath, audioPath, onInteractionComplete }) {
   const group = useRef();
   const { scene, nodes, materials } = useGLTF(modelPath);
 
-  // Load Animations
-  const walkFbx = useFBX('/animations/yogaai_animations/Walk In Circle.fbx'); // Using Walk In Circle for natural turning
-  const idleFbx = useFBX('/animations/yogaai_animations/Standing Idle.fbx');
+  // Load Animations (Optimized: Only load necessary animations to reduce initial payload & CPU parse)
+  const walkFbx = useFBX('/animations/yogaai_animations/Walk In Circle.fbx'); 
   const talkFbx = useFBX('/animations/yogaai_animations/Talking_0.fbx');
 
   // Prepare animations for mixer
   const animations = useMemo(() => {
     const walkAnim = walkFbx.animations[0].clone();
     walkAnim.name = 'Walking';
-    const idleAnim = idleFbx.animations[0].clone();
-    idleAnim.name = 'Idle';
     const talkAnim = talkFbx.animations[0].clone();
     talkAnim.name = 'Talking';
-    return [walkAnim, idleAnim, talkAnim];
-  }, [walkFbx, idleFbx, talkFbx]);
+    return [walkAnim, talkAnim];
+  }, [walkFbx, talkFbx]);
 
   const { actions, mixer } = useAnimations(animations, group);
 
@@ -225,5 +222,4 @@ export function HeroAvatar({ modelPath, audioPath, onInteractionComplete }) {
 
 useGLTF.preload('/models/new_yoga_assistant.glb');
 useFBX.preload('/animations/yogaai_animations/Walk In Circle.fbx');
-useFBX.preload('/animations/yogaai_animations/Standing Idle.fbx');
 useFBX.preload('/animations/yogaai_animations/Talking_0.fbx');
