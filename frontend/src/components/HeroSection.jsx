@@ -16,7 +16,7 @@ const HeroAvatarFallback = () => (
   </group>
 );
 
-export const HeroSection = ({ onGetStarted }) => {
+export const HeroSection = ({ onGetStarted, isAuthenticated }) => {
 
   const pills = [
     { icon: "🧘", text: "AI Yoga Coach" },
@@ -90,7 +90,7 @@ export const HeroSection = ({ onGetStarted }) => {
           className="relative overflow-hidden px-6 py-2.5 rounded-full text-sm font-bold text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#6b8f71]/25 hover:-translate-y-0.5 active:translate-y-0"
           style={{ background: "linear-gradient(135deg, #6b8f71 0%, #8b7fc4 100%)" }}
         >
-          Sign In
+          {isAuthenticated ? "Open Studio →" : "Sign In"}
         </button>
       </nav>
 

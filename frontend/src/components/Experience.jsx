@@ -1,21 +1,18 @@
 import {
   CameraControls,
   ContactShadows,
-  Environment,
-  Text,
   Sparkles,
   MeshDistortMaterial,
   Float,
   Html
 } from "@react-three/drei";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useChat } from "../hooks/useChat";
 import { Avatar } from "./Avatar";
 import { Model as Avatar2 } from "./Avatar2";
 import { Avatar as Avatar3 } from "./Avatar3";
 import { Avatar_yoga } from "./Avatar_yoga";
-import * as THREE from "three";
 
 /* =========================================================
    RAG PROCESSING INDICATOR (Glowing Blob & Text)
@@ -55,9 +52,9 @@ const ProcessingIndicator = () => {
 
       {/* Floating text always visible on screen */}
       <Html position={[0, 1.2, 0]} center zIndexRange={[100, 0]}>
-        <div className="w-[200px] text-center bg-white/80 backdrop-blur-md border border-[#c8dac8] px-3 py-2 rounded-xl shadow-lg pointer-events-none animate-pulse">
+        <div className="w-[220px] text-center bg-white/85 backdrop-blur-md border border-[#c8dac8] px-3.5 py-2 rounded-xl shadow-lg pointer-events-none animate-pulse">
           <p className="text-[#3d4e3e] text-xs font-semibold leading-tight">
-            Answers through yoga expert knowledge base without hallucination...
+            Consulting yoga expert knowledge base...
           </p>
         </div>
       </Html>
@@ -66,15 +63,24 @@ const ProcessingIndicator = () => {
 };
 
 /* =========================================================
-   3D LOADING FALLBACK (Twinkling Stars)
+   3D LOADING FALLBACK (Fast Preloader + Status Text)
    ========================================================= */
 const LoadingStars = () => (
-  <group position={[0, 1.3, 0]}>
-    <Sparkles count={150} scale={5} size={5} speed={0.5} opacity={1} color="#9b8ec4" />
+  <group position={[0, 1.2, 0]}>
+    <Sparkles count={150} scale={4} size={4} speed={0.5} opacity={0.9} color="#9b8ec4" />
+    <mesh position={[0, -0.3, 0]}>
+      <sphereGeometry args={[0.35, 24, 24]} />
+      <meshBasicMaterial color="#6b8f71" transparent opacity={0.15} wireframe />
+    </mesh>
     <Html center zIndexRange={[100, 0]}>
-       <div className="text-[#6b8f71] text-sm font-bold bg-white/70 px-4 py-2 rounded-full shadow-sm backdrop-blur-md">
-         Materializing your instructor...
-       </div>
+      <div className="flex flex-col items-center gap-1.5 bg-white/90 backdrop-blur-md px-5 py-2.5 rounded-2xl shadow-lg border border-[#c8dac8] pointer-events-none animate-pulse whitespace-nowrap">
+        <span className="text-sm font-extrabold text-[#2d4230]">
+          ✨ Your 3D model is coming for you...
+        </span>
+        <span className="text-[0.72rem] font-semibold text-[#6b8f71]">
+          Materializing your AI instructor
+        </span>
+      </div>
     </Html>
   </group>
 );
@@ -101,7 +107,13 @@ export const Experience = () => {
   return (
     <>
       <CameraControls ref={cameraControls} />
-      <Environment preset="sunset" />
+      
+      {/* High-performance local studio lighting (replaces 2MB remote HDR download) */}
+      <ambientLight intensity={0.75} />
+      <hemisphereLight skyColor="#fbf9f5" groundColor="#e0e8e0" intensity={0.65} />
+      <directionalLight position={[3, 5, 4]} intensity={0.9} color="#ffffff" />
+      <pointLight position={[-4, 2, -4]} intensity={0.35} color="#e8d8c8" />
+      <pointLight position={[4, 2, 4]} intensity={0.3} color="#c8e0c8" />
       
       <ProcessingIndicator />
       

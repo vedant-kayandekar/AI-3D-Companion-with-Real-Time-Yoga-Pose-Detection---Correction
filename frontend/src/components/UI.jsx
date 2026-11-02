@@ -146,15 +146,20 @@ export const UI = ({ hidden }) => {
   /* ── DESKTOP layout ── */
   return (
     <>
-      {/* Subtle admin button for knowledge base uploads */}
+      {/* Knowledge Base RAG Button */}
       <button 
         onClick={() => setShowUploadModal(true)}
-        title="Admin: Upload PDFs"
-        className="fixed top-20 left-4 z-[60] w-9 h-9 rounded-full bg-white/70 hover:bg-white border border-[#c8dac8] text-[#6b8f71] flex items-center justify-center transition-all shadow-md backdrop-blur-md pointer-events-auto"
+        title="Open RAG Knowledge Base"
+        className="fixed top-20 left-4 z-[60] px-3.5 py-1.5 rounded-full bg-white/90 hover:bg-white border border-[#b8d2b8] text-[#2d4230] flex items-center gap-2 transition-all shadow-md hover:shadow-lg backdrop-blur-md pointer-events-auto hover:-translate-y-0.5 active:translate-y-0"
       >
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-        </svg>
+        <span className="flex h-2 w-2 relative">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#6b8f71] opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-[#6b8f71]"></span>
+        </span>
+        <span className="text-xs font-black tracking-wide text-[#2d4230]">RAG</span>
+        <span className="text-[0.72rem] font-semibold text-[#5a725e] bg-[#f0f6f0] px-2 py-0.5 rounded-full border border-[#d8e6d8]">
+          (Knowledge Base)
+        </span>
       </button>
 
       {showUploadModal && <RAGPanel onClose={() => setShowUploadModal(false)} />}
@@ -185,8 +190,22 @@ export const UI = ({ hidden }) => {
             <ProcessingBadge stage={processingStage} />
           </div>
 
-          {/* Messages */}
-          <MessageList messages={messages} message={message} chatEndRef={chatEndRef} chat={chat} />
+          {/* Recruiter & Demo Information Note */}
+          <div className="mx-3 mt-2 px-3 py-1.5 rounded-xl bg-[#f4f8f4] border border-[#d0e4d0] text-[0.7rem] text-[#3d5a42] flex items-center gap-1.5 shadow-xs">
+            <span className="text-xs shrink-0">📌</span>
+            <p className="leading-tight">
+              <strong>Recruiter Note:</strong> Live demo runs on free-tier hosting. If third-party Gemini/Groq APIs hit quota limits, inspect the underlying architecture & RAG pipelines on{" "}
+              <a 
+                href="https://github.com/vedant-kayandekar/AI-3D-Companion-with-Real-Time-Yoga-Pose-Detection---Correction" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="underline font-bold text-[#2d6e35] hover:text-[#1b4822]"
+              >
+                GitHub
+              </a>.
+            </p>
+          </div>
+
 
           {/* Input */}
           <div className="flex-shrink-0 px-3 py-3 border-t border-[#eaf0ea] bg-white/60">
@@ -207,19 +226,31 @@ const MessageList = ({ messages, message, chatEndRef, chat }) => (
         <p className="text-[11px] text-[#a0b0a0] mt-1 mb-6">Grounded in verified yoga expertise</p>
         
         {/* Demo Questions */}
-        <div className="flex flex-col gap-2 max-w-[80%] mx-auto mt-4">
-          <p className="text-[10px] uppercase font-bold tracking-widest text-[#9bc8a0] mb-1">Try these demos</p>
+        <div className="flex flex-col gap-2 max-w-[88%] mx-auto mt-3">
+          <p className="text-[10px] uppercase font-bold tracking-widest text-[#6b8f71] mb-1">Explore Knowledge Base</p>
           <button 
-            onClick={() => chat("Bhujangasana steps")}
-            className="px-4 py-2 rounded-xl text-xs font-semibold text-[#4a7a50] bg-white border border-[#c8dac8] shadow-sm hover:shadow-md hover:-translate-y-0.5 hover:border-[#6b8f71] transition-all"
+            onClick={() => chat("Bhujangasana steps and precautions")}
+            className="px-3.5 py-1.5 rounded-xl text-[11px] font-semibold text-[#3d5a42] bg-white border border-[#c8dac8] shadow-xs hover:shadow-sm hover:-translate-y-0.5 hover:border-[#6b8f71] transition-all text-left"
           >
-            "Bhujangasana steps"
+            🧘 "Bhujangasana steps and precautions"
           </button>
           <button 
-            onClick={() => chat("Pawanmuktasana steps")}
-            className="px-4 py-2 rounded-xl text-xs font-semibold text-[#4a7a50] bg-white border border-[#c8dac8] shadow-sm hover:shadow-md hover:-translate-y-0.5 hover:border-[#6b8f71] transition-all"
+            onClick={() => chat("What is the yogic therapy for hypertension?")}
+            className="px-3.5 py-1.5 rounded-xl text-[11px] font-semibold text-[#3d5a42] bg-white border border-[#c8dac8] shadow-xs hover:shadow-sm hover:-translate-y-0.5 hover:border-[#6b8f71] transition-all text-left"
           >
-            "Pawanmuktasana steps"
+            🫀 "What is the yogic therapy for hypertension?"
+          </button>
+          <button 
+            onClick={() => chat("Which yoga practices help with thyroid disorders?")}
+            className="px-3.5 py-1.5 rounded-xl text-[11px] font-semibold text-[#3d5a42] bg-white border border-[#c8dac8] shadow-xs hover:shadow-sm hover:-translate-y-0.5 hover:border-[#6b8f71] transition-all text-left"
+          >
+            🦋 "Which yoga practices help with thyroid disorders?"
+          </button>
+          <button 
+            onClick={() => chat("Explain the benefits of Chin Mudra and Brahma Mudra")}
+            className="px-3.5 py-1.5 rounded-xl text-[11px] font-semibold text-[#3d5a42] bg-white border border-[#c8dac8] shadow-xs hover:shadow-sm hover:-translate-y-0.5 hover:border-[#6b8f71] transition-all text-left"
+          >
+            🙌 "Explain the benefits of Chin Mudra and Brahma Mudra"
           </button>
         </div>
       </div>

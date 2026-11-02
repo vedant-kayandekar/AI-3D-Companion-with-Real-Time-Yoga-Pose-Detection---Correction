@@ -198,7 +198,7 @@ function App() {
       {/* Public Routes */}
       <Route
         path="/"
-        element={<HeroSection onGetStarted={handleGetStarted} />}
+        element={<HeroSection onGetStarted={handleGetStarted} isAuthenticated={!!authToken} />}
       />
       <Route
         path="/login"
