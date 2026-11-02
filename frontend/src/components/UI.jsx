@@ -194,14 +194,14 @@ export const UI = ({ hidden }) => {
           <div className="mx-3 mt-2 px-3 py-1.5 rounded-xl bg-[#f4f8f4] border border-[#d0e4d0] text-[0.7rem] text-[#3d5a42] flex items-center gap-1.5 shadow-xs">
             <span className="text-xs shrink-0">📌</span>
             <p className="leading-tight">
-              <strong>Recruiter Note:</strong> Live demo runs on free-tier hosting. If third-party Gemini/Groq APIs hit quota limits, inspect the underlying architecture & RAG pipelines on{" "}
+              <strong>Recruiter Note:</strong> Live demo runs on free-tier hosting. If third-party Gemini/Groq APIs hit quota limits, inspect the underlying architecture, data files & RAG pipelines on{" "}
               <a 
                 href="https://github.com/vedant-kayandekar/AI-3D-Companion-with-Real-Time-Yoga-Pose-Detection---Correction" 
                 target="_blank" 
                 rel="noreferrer" 
                 className="underline font-bold text-[#2d6e35] hover:text-[#1b4822]"
               >
-                GitHub
+                GitHub Repository
               </a>.
             </p>
           </div>
