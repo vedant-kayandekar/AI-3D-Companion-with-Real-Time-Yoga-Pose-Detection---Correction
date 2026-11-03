@@ -95,6 +95,7 @@ export const ChatProvider = ({ children }) => {
     setAudioBuffer([]);
 
     try {
+      console.log("💬 [Chat] Sending message to backend:", { message: userMessage, role, isRAGMode, isGuest, guestId });
       setMessages((prev) => [
         ...prev,
         { sender_type: "user", content: userMessage, timestamp: new Date().toISOString() },
@@ -166,7 +167,13 @@ export const ChatProvider = ({ children }) => {
         try {
           const data = JSON.parse(event.data);
           
-          if (data.type === "text_ready") {
+          if (data.type === "auth_success") {
+            console.log(`[WS] 🟢 Connected successfully (Guest: ${data.isGuest}, ID: ${data.userId})`);
+            if (data.userId && data.isGuest) {
+              setGuestId(data.userId);
+              localStorage.setItem("guestId", data.userId);
+            }
+          } else if (data.type === "text_ready") {
             setMessages((prev) => [
               ...prev,
               {
