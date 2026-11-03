@@ -167,11 +167,12 @@ def main():
         print(f"❌ Failed to connect to Pinecone: {e}")
         return
 
-    print(f"🧠 Generating embeddings with Google 'models/text-embedding-004'...")
+    print(f"🧠 Generating embeddings with Google 'models/gemini-embedding-001' (768 dimensions)...")
     try:
         embed_model = GoogleGenerativeAIEmbeddings(
-            model="models/text-embedding-004",
-            google_api_key=gemini_key
+            model="models/gemini-embedding-001",
+            google_api_key=gemini_key,
+            output_dimensionality=768
         )
         # Test one sample to verify key works before loop
         _ = embed_model.embed_query("Yoga knowledge base check")
@@ -193,18 +194,35 @@ def main():
     for i in tqdm(range(0, total, batch_size), desc="Upserting batches"):
         batch = all_chunks[i : i + batch_size]
         texts = [b["text"] for b in batch]
-        try:
-            embeddings = embed_model.embed_documents(texts)
-            vectors = [
-                (batch[j]["id"], embeddings[j], batch[j]["metadata"])
-                for j in range(len(batch))
-            ]
-            index.upsert(vectors=vectors)
-            success_count += len(vectors)
-            time.sleep(0.3)  # Gentle delay to respect Gemini 15 RPM quota
-        except Exception as e:
-            print(f"\n[!] Error in batch {i}-{i+batch_size}: {e}")
-            break
+        
+        # Retry logic with backoff for rate limits
+        retries = 5
+        batch_success = False
+        for attempt in range(retries):
+            try:
+                embeddings = embed_model.embed_documents(texts)
+                vectors = [
+                    (batch[j]["id"], embeddings[j], batch[j]["metadata"])
+                    for j in range(len(batch))
+                ]
+                index.upsert(vectors=vectors)
+                success_count += len(vectors)
+                batch_success = True
+                time.sleep(0.5)  # Gentle delay
+                break
+            except Exception as e:
+                err_str = str(e)
+                if "429" in err_str or "quota" in err_str.lower() or "resource" in err_str.lower():
+                    wait_sec = (attempt + 1) * 5
+                    print(f"\n[!] Rate limit reached on batch {i}-{i+batch_size}. Retrying in {wait_sec}s (attempt {attempt+1}/{retries})...")
+                    time.sleep(wait_sec)
+                else:
+                    print(f"\n[!] Error in batch {i}-{i+batch_size}: {e}")
+                    if attempt == retries - 1:
+                        break
+                    time.sleep(2)
+        if not batch_success:
+            print(f"Skipping batch {i}-{i+batch_size} after repeated failures.")
 
     print("\n" + "=" * 65)
     print(f"🎉 INGESTION COMPLETE! {success_count}/{total} chunks live in Pinecone index '{PINECONE_INDEX_NAME}'!")

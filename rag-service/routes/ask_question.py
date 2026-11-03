@@ -21,10 +21,10 @@ async def ask_question(question: str = Form(...)):
         # embed model + pinecone setup
         pc = Pinecone(api_key=os.environ.get("PINECONE_API_KEY"))
         index = pc.Index(os.environ.get("PINECONE_INDEX_NAME", "yogaindex2"))
-        api_key = os.environ.get("GEMINI_API_KEY")
+        api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
         if not api_key:
             raise ValueError("GEMINI_API_KEY is not set in the environment")
-        embed_model = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004", google_api_key=api_key)
+        embed_model = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001", google_api_key=api_key, output_dimensionality=768)
         embedded_query = embed_model.embed_query(question)
         res = index.query(vector=embedded_query, top_k=3, include_metadata=True)
 

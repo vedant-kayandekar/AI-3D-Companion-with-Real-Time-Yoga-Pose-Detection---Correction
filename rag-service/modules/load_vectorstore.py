@@ -41,12 +41,13 @@ def get_google_embeddings():
     """Load embeddings model only when first called (avoids startup hang)"""
     try:
         from langchain_google_genai import GoogleGenerativeAIEmbeddings
-        api_key = os.getenv("GEMINI_API_KEY")
+        api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
         if not api_key:
             raise ValueError("GEMINI_API_KEY is not set in the environment")
         return GoogleGenerativeAIEmbeddings(
-            model="models/text-embedding-004",
-            google_api_key=api_key
+            model="models/gemini-embedding-001",
+            google_api_key=api_key,
+            output_dimensionality=768
         )
     except Exception as e:
         logger.exception(f"Failed to load Google embeddings: {e}")
